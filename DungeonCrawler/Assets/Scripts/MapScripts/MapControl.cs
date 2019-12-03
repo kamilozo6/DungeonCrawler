@@ -6,13 +6,15 @@ public class MapControl : MonoBehaviour
 {
 
     public int MapSize;
-    BitArray GameMap;
-    public GameObject pole;
+    string[,] GameMap;
+    public GameObject basicField;
+    float size;
 
     // Start is called before the first frame update
     void Start()
     {
-        GameMap = new BitArray(MapSize * MapSize);
+        GameMap = new string[MapSize+2, MapSize+2];
+        size = basicField.transform.GetChild(0).GetComponent<Renderer>().bounds.size.x;
         GenerateMap();
         DrawMap();
     }
@@ -25,20 +27,27 @@ public class MapControl : MonoBehaviour
 
     void GenerateMap()
     {
-        for(int i=0;i<MapSize;i++)
+        for(int i=1;i<=MapSize;i++)
         {
-            for (int j = 0; j < MapSize; j++)
+            for (int j = 1; j <= MapSize; j++)
             {
-                if (i == j) GameMap[i + (j * MapSize)] = true;
+                GameMap[i, j] = "";
+                if (i == j) GameMap[i,j] = "Empty field";
             }
         }
     }
 
     void DrawMap()
     {
-        for (int i = 0; i < GameMap.Length; i++)
+        for (int i = 0; i <= MapSize; i++)
         {
-            if (GameMap[i]) Instantiate(pole, new Vector3((i % MapSize)*pole.transform.GetChild(0).GetComponent<Renderer>().bounds.size.x, 0, (i / MapSize) * pole.transform.GetChild(0).GetComponent<Renderer>().bounds.size.z), Quaternion.identity);
+            for (int j = 0; j <= MapSize; j++)
+            {
+                if (GameMap[i, j] != "" && GameMap[i, j] != null)
+                {
+                    Instantiate(Resources.Load(GameMap[i,j]), new Vector3(i * size, 0, j * size), Quaternion.identity);
+                }
+            }
         }
     }
 
