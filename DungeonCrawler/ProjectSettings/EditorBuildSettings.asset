@@ -4,5 +4,11 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/MapGeneration/GeneratorMenu.unity
+    guid: f28bd81fd5a926b499bce897048704d0
+  - enabled: 1
+    path: Assets/Scenes/MapGeneration/GeneratedDungeon.unity
+    guid: 7ac6199358cd7154396cca7a52955153
   m_configObjects: {}
