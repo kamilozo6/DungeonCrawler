@@ -23,8 +23,25 @@ public class GeneratorMenuUIControl : MonoBehaviour
 
     static public int seed = -1;
 
+    public InputField seedInput;
+    public Slider mapWidth;
+    public Slider mapHeight;
+    public Slider maxRoomSize;
+    public Slider minRoomSize;
+    public Slider roomWallBorder;
+    public Slider corridorWidth;
+    public Slider maxDepth;
+
     public void GenerateDungeon(string dungeonName)
     {
+        seed = int.Parse(seedInput.text);
+        MAP_WIDTH = (int)mapWidth.value;
+        MAP_HEIGHT = (int)mapHeight.value;
+        ROOM_MAX_SIZE = (int)maxRoomSize.value;
+        ROOM_MIN_SIZE = (int)minRoomSize.value;
+        ROOM_WALL_BORDER = (int)roomWallBorder.value;
+        CORRIDOR_WIDTH = (int)corridorWidth.value;
+        MAX_DEPTH = (int)maxDepth.value;
         SceneManager.LoadScene(dungeonName);
     }
 }

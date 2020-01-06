@@ -11,6 +11,7 @@ public class Tile {
 	
 	// Tile ID
 	public int id;
+    
 	
 	public Tile ( int _id )
 	{

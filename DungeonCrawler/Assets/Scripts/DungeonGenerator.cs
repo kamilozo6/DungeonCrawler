@@ -50,8 +50,18 @@ public class DungeonGenerator : MonoSingleton <DungeonGenerator> {
 	// On Awake
 	public override void Init()
 	{
-		// Initialize the tilemap
-		tiles = new Tile[MAP_HEIGHT,MAP_WIDTH];
+        MAP_WIDTH = GeneratorMenuUIControl.MAP_WIDTH;
+        MAP_HEIGHT = GeneratorMenuUIControl.MAP_HEIGHT;
+
+        // Room Parameters
+        ROOM_MAX_SIZE = GeneratorMenuUIControl.ROOM_MAX_SIZE;
+        ROOM_MIN_SIZE = GeneratorMenuUIControl.ROOM_MIN_SIZE;
+        ROOM_WALL_BORDER = GeneratorMenuUIControl.ROOM_WALL_BORDER;
+        MAX_DEPTH = GeneratorMenuUIControl.MAX_DEPTH;
+        CORRIDOR_WIDTH = GeneratorMenuUIControl.CORRIDOR_WIDTH;
+        seed = GeneratorMenuUIControl.seed;
+    // Initialize the tilemap
+        tiles = new Tile[MAP_HEIGHT,MAP_WIDTH];
 		for (int i = 0; i < MAP_HEIGHT; i++) 
 			for (int j = 0; j < MAP_WIDTH; j++) 
 				tiles[i,j] = new Tile(Tile.TILE_EMPTY);
@@ -61,8 +71,12 @@ public class DungeonGenerator : MonoSingleton <DungeonGenerator> {
 
 		// List of rooms
 		rooms = new List<Room>();
-		
-	}
+
+        Camera.main.transform.position = new Vector3(MAP_WIDTH / 2, 100, MAP_HEIGHT / 2);
+        Random.InitState(seed);
+        GenerateDungeon(seed);
+
+    }
 	
 	// On Start
 	void Start () 
@@ -73,23 +87,23 @@ public class DungeonGenerator : MonoSingleton <DungeonGenerator> {
 	// Each frame
 	void Update () {
 		// Generate a new Test Dungeon
-		if (Input.GetButtonDown("Jump"))
-		{
-			// Generate a new Seed
-			seed = System.DateTime.Now.Millisecond*1000 + System.DateTime.Now.Minute*100;
+		//if (Input.GetButtonDown("Jump"))
+		//{
+		//	// Generate a new Seed
+		//	seed = System.DateTime.Now.Millisecond*1000 + System.DateTime.Now.Minute*100;
 			
-			// Camera on middle and looking down
-			Camera.main.transform.position = new Vector3(MAP_WIDTH/2,100,MAP_HEIGHT/2);
+		//	// Camera on middle and looking down
+		//	Camera.main.transform.position = new Vector3(MAP_WIDTH/2,100,MAP_HEIGHT/2);
 			
-			// Set the randome seed
-			Random.seed = seed;
+		//	// Set the randome seed
+		//	Random.seed = seed;
 			
-			// Generate Dungeon
-			Debug.Log ("Dungeon Generation Started");
+		//	// Generate Dungeon
+		//	Debug.Log ("Dungeon Generation Started");
 			
-			GenerateDungeon(seed);
+		//	GenerateDungeon(seed);
 			
-		}
+		//}
 	}
 	
 	// Clean everything
@@ -128,23 +142,17 @@ public class DungeonGenerator : MonoSingleton <DungeonGenerator> {
 		// Generate QuadTree
 		GenerateQuadTree (ref quadTree);
 
-
-		Debug.Log ("Generating Rooms");
-		
+		Debug.Log ("Generating Rooms");		
 		// Generate Rooms
-		GenerateRooms (ref rooms, quadTree);
+		GenerateRooms (ref rooms, quadTree);		
 		
-		
-		Debug.Log ("Generating Corridors");
-		
+		Debug.Log ("Generating Corridors");		
 		// Generate Corridors
-		GenerateCorridors ();
-		
+		GenerateCorridors ();		
 		
 		Debug.Log ("Generating Walls");
 		
 		GenerateWalls();
-
 		
 		Debug.Log ("Generating GameObjects, this may take a while..");
 		
@@ -272,6 +280,7 @@ public class DungeonGenerator : MonoSingleton <DungeonGenerator> {
                     {
                         GameObject floor = GameObject.Instantiate(prefabFloor01, new Vector3(col, 0.0f, row), Quaternion.identity) as GameObject;
                         floor.transform.parent = container.transform;
+                        floor.GetComponent<Renderer>().material = corridorTexture;
                     }
                     else if (id == Tile.TILE_WALL) // pole na ścianę
 					{
@@ -336,12 +345,16 @@ public class DungeonGenerator : MonoSingleton <DungeonGenerator> {
 	
 	public void DigRoom(int row, int col)
 	{
-		 tiles[row,col].id = Tile.TILE_ROOM;
+        //todo dodać losowanie typu pola i tekstury
+        tiles[row,col].id = Tile.TILE_ROOM;
 	}
 	
 	public void DigCorridor(int row, int col)
 	{
-		 tiles[row,col].id = Tile.TILE_CORRIDOR;
+        if (tiles[row, col].id == Tile.TILE_EMPTY)
+        {
+            tiles[row, col].id = Tile.TILE_CORRIDOR;
+        }
 	}
 	
 	public void DigCorridor(XY p1, XY p2)
