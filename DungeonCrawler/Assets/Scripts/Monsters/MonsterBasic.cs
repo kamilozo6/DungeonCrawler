@@ -82,16 +82,9 @@ public class MonsterBasic : MonoBehaviour
     {
         if (other.tag.Equals("Player") && !monsterState.Equals(State.Death))
         {
-            Quaternion targetRotation = Quaternion.LookRotation(other.transform.position - transform.position);
-            float oryginalX = transform.rotation.x;
-            float oryginalZ = transform.rotation.z;
+            transform.rotation = GetRotation(other);
 
-            Quaternion finalRotation = Quaternion.Slerp(transform.rotation, targetRotation, 5.0f * Time.deltaTime);
-            finalRotation.x = oryginalX;
-            finalRotation.z = oryginalZ;
-            transform.rotation = finalRotation;
-
-            if(timer>0)
+            if (timer>0)
             {
                 timer -= Time.deltaTime;
             }
@@ -107,6 +100,7 @@ public class MonsterBasic : MonoBehaviour
                 if (timer <= 0)
                 {
                     animationSet(AnimationStates.Attack);
+                    Attack(other);
                     timer = 1 / attackSpeed;
                 }
                 else if (timer + 1 < 1 / attackSpeed)
@@ -171,7 +165,7 @@ public class MonsterBasic : MonoBehaviour
         }
     }
 
-    void Attack()
+    protected virtual void Attack(Collider player)
     {
 
     }
@@ -189,5 +183,18 @@ public class MonsterBasic : MonoBehaviour
     void MakeMove()
     {
 
+    }
+
+    protected Quaternion GetRotation(Collider other)
+    {
+        Quaternion targetRotation = Quaternion.LookRotation(other.transform.position - transform.position);
+        float oryginalX = transform.rotation.x;
+        float oryginalZ = transform.rotation.z;
+
+        Quaternion finalRotation = Quaternion.Slerp(transform.rotation, targetRotation, 5.0f * Time.deltaTime);
+        finalRotation.x = oryginalX;
+        finalRotation.z = oryginalZ;
+
+        return finalRotation;
     }
 }
