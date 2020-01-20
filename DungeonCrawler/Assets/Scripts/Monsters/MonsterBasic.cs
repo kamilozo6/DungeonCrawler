@@ -7,13 +7,15 @@ enum State
     Default,
     Chase,
     Attack,
+    Death
 }
 
 enum AnimationStates
 {
     Idle,
     Walk,
-    Attack
+    Attack,
+    Death
 }
 
 public class MonsterBasic : MonoBehaviour
@@ -32,13 +34,16 @@ public class MonsterBasic : MonoBehaviour
     private string lastAnimationState;
     private Animator animator;
     private AnimatorStateInfo stateInfo;
+    private const float deletionAfterDeathTime = 5;
+    private float deathTimer;
 
     State monsterState;
 
     // Animations states
     public static readonly string[] animationsStatesString = {"Idle",
     "Walk",
-    "Attack"};
+    "Attack",
+    "Death"};
 
     // Unity functions
 
@@ -48,16 +53,34 @@ public class MonsterBasic : MonoBehaviour
         animator = transforms[0].GetComponent<Animator>();
         currentAnimationState = "Idle";
         lastAnimationState = "";
+        monsterState = State.Default;
+        deathTimer = 0;
     }
 
     // Update is called once per frame
     void Update()
     {
-
+        if(monsterState.Equals(State.Death))
+        {
+            deathTimer += Time.deltaTime;
+            if(deathTimer >= deletionAfterDeathTime)
+            {
+                Destroy(gameObject);
+            }
+        }
     }
+
+    void OnTriggerEnter(Collider other)
+    {
+        if (other.tag.Equals("Player") && !monsterState.Equals(State.Death))
+        {
+            monsterState = State.Chase;
+        }
+    }
+
     void OnTriggerStay(Collider other)
     {
-        if (other.tag.Equals("Player"))
+        if (other.tag.Equals("Player") && !monsterState.Equals(State.Death))
         {
             Quaternion targetRotation = Quaternion.LookRotation(other.transform.position - transform.position);
             float oryginalX = transform.rotation.x;
@@ -96,9 +119,10 @@ public class MonsterBasic : MonoBehaviour
 
     void OnTriggerExit(Collider other)
     {
-        if (other.tag.Equals("Player"))
+        if (other.tag.Equals("Player") && !monsterState.Equals(State.Death))
         {
-            animationSet((int)AnimationStates.Idle);
+            monsterState = State.Default;
+            animationSet(AnimationStates.Idle);
         }
     }
 
@@ -107,6 +131,13 @@ public class MonsterBasic : MonoBehaviour
 
     private void animationSet(AnimationStates animationStateToPlay)
     {
+        // If monster is dead only animation that we can set is death
+        if(monsterState.Equals(State.Death) && 
+            !animationStateToPlay.Equals(AnimationStates.Death))
+        {
+            return;
+        }
+
         string animationToPlay = animationsStatesString[(int)animationStateToPlay];
         stateInfo = animator.GetCurrentAnimatorStateInfo(0);
 
@@ -127,7 +158,20 @@ public class MonsterBasic : MonoBehaviour
         currentAnimationState = animationToPlay;        
     }
 
-void Attack()
+    public void GetHit(int value)
+    {
+        if (!monsterState.Equals(State.Death))
+        {
+            healthPoints -= value;
+            if (healthPoints <= 0)
+            {
+                monsterState = State.Death;
+                animationSet(AnimationStates.Death);
+            }
+        }
+    }
+
+    void Attack()
     {
 
     }
