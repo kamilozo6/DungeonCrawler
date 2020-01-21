@@ -9181,11 +9181,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 312fcc4134e2a7348b42dbe226f23e20, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damge: 0
+  damge: 25
   attackSpeed: 1
-  moveSpeed: 3
+  moveSpeed: 2
   range: 3
-  healthPoints: 100
+  healthPoints: 160
   transforms:
   - {fileID: 8484807575878588173}
 --- !u!1 &8488251964376099223

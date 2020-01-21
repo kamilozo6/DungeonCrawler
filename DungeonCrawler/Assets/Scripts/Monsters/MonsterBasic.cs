@@ -103,7 +103,7 @@ public class MonsterBasic : MonoBehaviour
                     Attack(other);
                     timer = 1 / attackSpeed;
                 }
-                else if (timer + 1 < 1 / attackSpeed)
+                else if (timer + 2 < 1 / attackSpeed)
                 {
                     animationSet(AnimationStates.Idle);
                 }
@@ -167,7 +167,6 @@ public class MonsterBasic : MonoBehaviour
 
     protected virtual void Attack(Collider player)
     {
-
     }
 
     void Chase()

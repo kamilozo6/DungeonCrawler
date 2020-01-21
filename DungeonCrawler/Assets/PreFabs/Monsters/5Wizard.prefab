@@ -4973,13 +4973,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b2264d1c89d7ab240a56684c322c8baf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damge: 0
+  damge: 30
   attackSpeed: 0.5
   moveSpeed: 2
-  range: 6
+  range: 7
   healthPoints: 100
   transforms:
   - {fileID: 5229124506598788151}
+  fireballPrefab: {fileID: 3745868728631310653, guid: 0ae8bfac49882d64083ae85c1b01171a,
+    type: 3}
 --- !u!1 &5232106843715602205
 GameObject:
   m_ObjectHideFlags: 0

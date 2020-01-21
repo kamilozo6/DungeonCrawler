@@ -1991,11 +1991,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bf9c391ca0e3f5945a8875985bc10b7f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damge: 0
-  attackSpeed: 1
-  moveSpeed: 3
-  range: 7
-  healthPoints: 100
+  damge: 15
+  attackSpeed: 0.75
+  moveSpeed: 2
+  range: 8
+  healthPoints: 75
   transforms:
   - {fileID: 8206375674920540558}
   arrowPrefab: {fileID: 8848036325156144975, guid: b2315537968c6ef44b274c3b80570502,

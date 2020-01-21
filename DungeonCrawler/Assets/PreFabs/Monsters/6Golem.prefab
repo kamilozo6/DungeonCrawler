@@ -1369,11 +1369,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1f0c9ce36d0767d4c87b6e6db80e7297, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damge: 0
-  attackSpeed: 1
-  moveSpeed: 3
+  damge: 30
+  attackSpeed: 0.5
+  moveSpeed: 1
   range: 3
-  healthPoints: 100
+  healthPoints: 200
   transforms:
   - {fileID: 3730777725087824850}
 --- !u!1 &3732317437914988360
