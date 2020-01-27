@@ -1,0 +1,150 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &100000
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 400000}
+  m_Layer: 0
+  m_Name: Rooms
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &400000
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 100000}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 400004}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &100004
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 400004}
+  - component: {fileID: 11400004}
+  m_Layer: 0
+  m_Name: Dungeon
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &400004
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 100004}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 400000}
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &11400004
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 100004}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 070053cc18d5d664a948ad2e92103fe7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MAP_WIDTH: 128
+  MAP_HEIGHT: 128
+  ROOM_MAX_SIZE: 16
+  ROOM_MIN_SIZE: 4
+  ROOM_WALL_BORDER: 1
+  ROOM_UGLY_ENABLED: 1
+  ROOM_MAX_RATIO: 4
+  MAX_DEPTH: 10
+  CHANCE_STOP: 2
+  SLICE_TRIES: 15
+  CORRIDOR_WIDTH: 2
+  containerRooms: {fileID: 100000}
+  prefabWall01: {fileID: 0}
+  prefabFloor01: {fileID: 0}
+  prefabPola: []
+  roomTexture: []
+  corridorTexture: {fileID: 0}
+  meshCombiner: {fileID: 0}
+  player: {fileID: 0}
+  seed: -1
+  quadTree:
+    seed: 0
+    boundary:
+      center:
+        x: 0
+        y: 0
+      half:
+        x: 0
+        y: 0
+    room:
+      boundary:
+        center:
+          x: 0
+          y: 0
+        half:
+          x: 0
+          y: 0
+      quadtree:
+        seed: 0
+        boundary:
+          center:
+            x: 0
+            y: 0
+          half:
+            x: 0
+            y: 0
+        room:
+          boundary:
+            center:
+              x: 0
+              y: 0
+            half:
+              x: 0
+              y: 0
+          quadtree:
+            seed: 0
+            boundary:
+              center:
+                x: 0
+                y: 0
+              half:
+                x: 0
+                y: 0
+            room:
+              boundary:
+                center:
+                  x: 0
+                  y: 0
+                half:
+                  x: 0
+                  y: 0
+              quadtree:
+                seed: 0
+  rooms: []
