@@ -8,7 +8,10 @@ public class Wizard : MonsterBasic
 
     protected override void Attack(Collider player)
     {
-        Instantiate(fireballPrefab, GetFireballPosition(), GetFireballRotation(player));
+        monsterState = State.Attack;
+        GameObject fireball = Instantiate(fireballPrefab, GetFireballPosition(), GetFireballRotation(player));
+        Fireball fireballClass = fireball.GetComponent<Fireball>();
+        fireballClass.canApplyEffect = true;
     }
 
     private Quaternion GetFireballRotation(Collider player)

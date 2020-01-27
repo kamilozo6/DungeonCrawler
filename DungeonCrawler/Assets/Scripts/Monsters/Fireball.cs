@@ -5,6 +5,8 @@ using UnityEngine;
 public class Fireball : MonoBehaviour
 {
     public float moveSpeed;
+    public float fireProbability;
+    public bool canApplyEffect;
 
     // Update is called once per frame
     void Update()
@@ -17,6 +19,11 @@ public class Fireball : MonoBehaviour
         if (other.tag.Equals("Player"))
         {
             // TODO damage player
+            if (Random.Range(0.0f, 1.0f) <= fireProbability && canApplyEffect)
+            {
+                // TODO apply effect to player
+                print("XD");
+            }
         }
 
         Destroy(gameObject);

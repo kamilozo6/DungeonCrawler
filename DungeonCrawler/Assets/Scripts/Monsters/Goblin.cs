@@ -8,6 +8,7 @@ public class Goblin : MonsterBasic
 
     protected override void Attack(Collider player)
     {
+        monsterState = State.Attack;
         Instantiate(arrowPrefab, GetArrowPosition(), GetArrowRotation(player));
     }
 

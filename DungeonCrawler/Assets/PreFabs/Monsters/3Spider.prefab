@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7368483796403686538}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: head
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -42,7 +42,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7368525433057321496}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: right_leg_front_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -73,7 +73,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7376230948193209250}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: head_end
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -106,7 +106,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7376174264485668058}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: left_leg_center_3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -137,7 +137,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7376280119212019020}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: neck
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -168,7 +168,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7368942312551104362}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: left_leg_back_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -199,7 +199,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7368488452253509106}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: right_leg_back_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -230,7 +230,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7368486124122418592}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Circle003
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -261,7 +261,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7375849690879510218}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: left_leg_center_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -292,7 +292,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7375949761588398976}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: right_leg_center_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -323,7 +323,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7368691293255125284}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: right_leg_front_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -354,7 +354,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7368645934190491284}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: IK Chain012
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -384,7 +384,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7375936974753075380}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Circle001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -416,7 +416,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7375888368404840110}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: right_leg_center_4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -446,7 +446,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7376293003053640710}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: left_leg_back_4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -478,7 +478,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7376091110421711520}
   - component: {fileID: 7468655346527208112}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: spider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -588,7 +588,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7368867868386044028}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: left_leg_center_4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -618,7 +618,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7376175270343857212}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: left_leg_back_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -649,7 +649,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7368464092078738960}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: left_chap
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -679,7 +679,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7368934570802567606}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: left_leg_front_3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -710,7 +710,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7376086581685700388}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Circle004
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -740,7 +740,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7376202919774463584}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: IK Chain008
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -770,7 +770,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7368536772549489252}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: left_leg_center_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -801,7 +801,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7368719586384968136}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: right_leg_center_3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -832,7 +832,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7376061261099976526}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: IK Chain009
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -862,7 +862,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7368509845480650718}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: right_leg_back_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -893,7 +893,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7368660169056258312}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: left_leg_back_3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -928,7 +928,7 @@ GameObject:
   - component: {fileID: 7371551473579249880}
   - component: {fileID: 7371551473579249881}
   - component: {fileID: 6743079375650457676}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: 3Spider
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -1010,11 +1010,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damge: 20
   attackSpeed: 0.75
-  moveSpeed: 2
+  moveSpeed: 3
   range: 3
   healthPoints: 130
   transforms:
   - {fileID: 7368480116636919116}
+  poisonProbability: 0.1
 --- !u!1 &7371019496889219098
 GameObject:
   m_ObjectHideFlags: 0
@@ -1024,7 +1025,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7368730378467357134}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: left_leg_front_2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1055,7 +1056,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7375916057788507214}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: right_leg_back_3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1086,7 +1087,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7368887238690736316}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: right_chap
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1116,7 +1117,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7368708921440387170}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: right_leg_back_4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1147,7 +1148,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7376237526946860860}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: IK Chain007
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1177,7 +1178,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7368608764785256852}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: left_leg_front_4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1207,7 +1208,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7375920694930358114}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: left_leg_front_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1238,7 +1239,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7376124540049153282}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Circle005
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1268,7 +1269,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7368533855654136618}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: right_leg_center_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1299,7 +1300,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7368537330093194390}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: IK Chain015
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1329,7 +1330,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7368486817137074632}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: body
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1366,7 +1367,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7368535237242257612}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: IK Chain014
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1396,7 +1397,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7375878083539750602}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Box001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1433,7 +1434,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7368896220599316198}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: IK Chain013
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1463,7 +1464,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7369014657734554334}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: right_leg_front_3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1494,7 +1495,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7368858291024326770}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: right_leg_front_4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
