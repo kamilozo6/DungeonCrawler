@@ -72,6 +72,9 @@ public class MonsterBasic : MonoBehaviour
         deathTimer = 0;
         pathfinder = new Pathfinder(xFraction, zFraction, transform.position.y, 15);
         isFollowingPlayer = false;
+        SphereCollider sphereCollider = GetComponent<SphereCollider>();
+        sphereCollider.radius *= 2;
+        moveSpeed += 2;
     }
 
     // Update is called once per frame
@@ -115,6 +118,23 @@ public class MonsterBasic : MonoBehaviour
     }
 
     // Functions
+
+    public static readonly string[] monsterPrefabs = {"1Zombie",
+    "2Skeleton",
+    "3Spider",
+    "4Dragon",
+    "5Wizard",
+    "6Golem",
+    "7Troll",
+    "8Goblin",
+    "9Orc"};
+
+    public static void SpawnRandomMonster(Vector3 spawnPosition)
+    {
+        int randomNumber = Random.Range(0, 9);
+        GameObject monsterPrefab = Resources.Load("Monsters/" + monsterPrefabs[randomNumber]) as GameObject;
+        Instantiate(monsterPrefab, spawnPosition, Quaternion.Euler(0, 0, 0));
+    }
 
     protected void UpdateTimer()
     {

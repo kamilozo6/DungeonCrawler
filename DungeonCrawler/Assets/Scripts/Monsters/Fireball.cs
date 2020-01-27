@@ -7,11 +7,22 @@ public class Fireball : MonoBehaviour
     public float moveSpeed;
     public float fireProbability;
     public bool canApplyEffect;
+    private float length;
+
+    void Start()
+    {
+        length = 100;
+    }
 
     // Update is called once per frame
     void Update()
     {
         transform.Translate(Vector3.forward * moveSpeed * Time.deltaTime);
+        length -= moveSpeed * Time.deltaTime;
+        if (length <= 0)
+        {
+            Destroy(gameObject);
+        }
     }
 
     void OnTriggerEnter(Collider other)

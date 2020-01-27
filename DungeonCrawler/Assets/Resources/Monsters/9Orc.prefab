@@ -9193,6 +9193,7 @@ MonoBehaviour:
   chargeSpeed: 10
   chargeLenght: 10
   waitAfterCharge: 2
+  testFPS: {fileID: 9146427374223940864, guid: 51b2c921c6e1fa042a5e58bf8725b968, type: 3}
 --- !u!1 &8488251964376099223
 GameObject:
   m_ObjectHideFlags: 0

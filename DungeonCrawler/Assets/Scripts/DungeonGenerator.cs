@@ -46,6 +46,10 @@ public class DungeonGenerator : MonoSingleton <DungeonGenerator> {
 	
 	// List of rooms
 	public List<Room> rooms;
+
+	// Test
+	public GameObject FPScontr;
+	private bool spawnedFPS;
 	
 	// On Awake
 	public override void Init()
@@ -72,7 +76,7 @@ public class DungeonGenerator : MonoSingleton <DungeonGenerator> {
 		// List of rooms
 		rooms = new List<Room>();
 
-        Camera.main.transform.position = new Vector3(MAP_WIDTH / 2, 100, MAP_HEIGHT / 2);
+        //Camera.main.transform.position = new Vector3(MAP_WIDTH / 2, 100, MAP_HEIGHT / 2);
         Random.InitState(seed);
         GenerateDungeon(seed);
 
@@ -200,6 +204,16 @@ public class DungeonGenerator : MonoSingleton <DungeonGenerator> {
 		XY roomCenter = new XY();
 		roomCenter.x = Random.Range(ROOM_WALL_BORDER + _quadTree.boundary.Left() + ROOM_MIN_SIZE/2.0f, _quadTree.boundary.Right() - ROOM_MIN_SIZE/2.0f - ROOM_WALL_BORDER);
 		roomCenter.y = Random.Range(ROOM_WALL_BORDER + _quadTree.boundary.Bottom() + ROOM_MIN_SIZE/2.0f, _quadTree.boundary.Top() - ROOM_MIN_SIZE/2.0f - ROOM_WALL_BORDER);		
+
+		if(!spawnedFPS)
+		{
+			spawnedFPS = true;
+			Instantiate(FPScontr, new Vector3(roomCenter.x, 0.5f, roomCenter.y), Quaternion.Euler(0, 0, 0));
+		}
+		else
+		{
+			MonsterBasic.SpawnRandomMonster(new Vector3(roomCenter.x + 0.5f, 0.0f, roomCenter.y + 0.5f));
+		}
 		
 		// Half size of the room
 		XY roomHalf = new XY();
@@ -272,19 +286,19 @@ public class DungeonGenerator : MonoSingleton <DungeonGenerator> {
 					int id = tiles[row,col].id;
 					if (id == Tile.TILE_ROOM) //Pole w pomieszczeniu
 					{
-						GameObject floor = GameObject.Instantiate(prefabFloor01,new Vector3(col,0.0f,row),Quaternion.identity) as GameObject;
+						GameObject floor = GameObject.Instantiate(prefabFloor01,new Vector3(col+0.5f,0.0f,row + 0.5f),Quaternion.identity) as GameObject;
 						floor.transform.parent = container.transform;
                         floor.GetComponent<Renderer>().material = corridorTexture;
 					}
                     else if (id == Tile.TILE_CORRIDOR) //pole w korytarzu
                     {
-                        GameObject floor = GameObject.Instantiate(prefabFloor01, new Vector3(col, 0.0f, row), Quaternion.identity) as GameObject;
+                        GameObject floor = GameObject.Instantiate(prefabFloor01, new Vector3(col + 0.5f, 0.0f, row + 0.5f), Quaternion.identity) as GameObject;
                         floor.transform.parent = container.transform;
                         floor.GetComponent<Renderer>().material = corridorTexture;
                     }
                     else if (id == Tile.TILE_WALL) // pole na ścianę
 					{
-						GameObject wall = GameObject.Instantiate(prefabWall01,new Vector3(col,0.0f,row),Quaternion.identity) as GameObject;
+						GameObject wall = GameObject.Instantiate(prefabWall01,new Vector3(col + 0.5f, 0.0f,row + 0.5f),Quaternion.identity) as GameObject;
 						wall.transform.parent = container.transform;
                         wall.GetComponent<Renderer>().material = corridorTexture;
                     }

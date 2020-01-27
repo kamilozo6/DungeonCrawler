@@ -439,7 +439,7 @@ MonoBehaviour:
   - {fileID: 8002353143113385649}
   rangeAttackProbability: 0.05
   rangeOfRangeAttack: 5
-  fireballPrefab: {fileID: 3745868728631310653, guid: 0ae8bfac49882d64083ae85c1b01171a,
+  fireballPrefab: {fileID: 3745868728631310653, guid: f71f8e3633ec2734497a789cd55d202c,
     type: 3}
 --- !u!1 &8002353143147140456
 GameObject:
