@@ -17,14 +17,23 @@ public class Dragon : MonsterBasic
         RaycastHit raycastHit;
         Physics.Linecast(transform.position, player.transform.position, out raycastHit, 1);
 
+        if (!isFollowingPlayer && !raycastHit.transform.tag.Equals("Player"))
+        {
+            return;
+        }
+        else
+        {
+            isFollowingPlayer = true;
+        }
+
         // Melee attack
-        if (distance <= range && raycastHit.transform.tag.Equals("Player")) 
+        if (distance <= range && raycastHit.transform.tag.Equals("Player") && !monsterState.Equals(State.Chase)) 
         {
             isRangeAttack = false;
             CheckTimerAndAttack(player);
         }
         // Range attack
-        else if (randomNum <= rangeAttackProbability && distance <= rangeOfRangeAttack && raycastHit.transform.tag.Equals("Player"))
+        else if (randomNum <= rangeAttackProbability && distance <= rangeOfRangeAttack && raycastHit.transform.tag.Equals("Player") && !monsterState.Equals(State.Chase))
         {
             isRangeAttack = true;
             CheckTimerAndAttack(player);

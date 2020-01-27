@@ -9188,6 +9188,11 @@ MonoBehaviour:
   healthPoints: 160
   transforms:
   - {fileID: 8484807575878588173}
+  chargeProbability: 0.1
+  rangeOfCharge: 7
+  chargeSpeed: 10
+  chargeLenght: 10
+  waitAfterCharge: 2
 --- !u!1 &8488251964376099223
 GameObject:
   m_ObjectHideFlags: 0

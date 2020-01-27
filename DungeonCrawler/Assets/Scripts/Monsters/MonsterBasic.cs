@@ -19,7 +19,8 @@ public class MonsterBasic : MonoBehaviour
         Idle,
         Walk,
         Attack,
-        Death
+        Death,
+        Charge
     }
     // Properties
     public int damge;
@@ -56,7 +57,8 @@ public class MonsterBasic : MonoBehaviour
     public static readonly string[] animationsStatesString = {"Idle",
     "Walk",
     "Attack",
-    "Death"};
+    "Death",
+    "Charge"};
 
     // Unity functions
 
