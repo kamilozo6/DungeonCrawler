@@ -45,7 +45,7 @@ public class Orc : MonsterBasic
             CheckTimerAndAttack(player);
         }
         // Charge attack
-        else if ((randomNum <= chargeProbability && distance <= rangeOfCharge && raycastHit.transform.tag.Equals("Player") && !monsterState.Equals(State.Chase)) || isInCharge)
+        else if ((randomNum <= chargeProbability && distance <= rangeOfCharge && raycastHit.transform.tag.Equals("Player") && monsterState.Equals(State.Default)) || isInCharge)
         {
             Charge(player);
         }
