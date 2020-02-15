@@ -11,10 +11,12 @@ public class Tile {
 	
 	// Tile ID
 	public int id;
+    public int texture;
     
 	
-	public Tile ( int _id )
+	public Tile ( int _id, int _texture )
 	{
 		this.id = _id;
+        this.texture = _texture;
 	}
 }

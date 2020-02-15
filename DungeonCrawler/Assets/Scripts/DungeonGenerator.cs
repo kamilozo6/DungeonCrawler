@@ -68,7 +68,7 @@ public class DungeonGenerator : MonoSingleton <DungeonGenerator> {
         tiles = new Tile[MAP_HEIGHT,MAP_WIDTH];
 		for (int i = 0; i < MAP_HEIGHT; i++) 
 			for (int j = 0; j < MAP_WIDTH; j++) 
-				tiles[i,j] = new Tile(Tile.TILE_EMPTY);
+				tiles[i,j] = new Tile(Tile.TILE_EMPTY, 0);
 		
 		// Init QuadTree
 		quadTree = new QuadTree(new AABB(new XY(MAP_WIDTH/2.0f,MAP_HEIGHT/2.0f),new XY(MAP_WIDTH/2.0f, MAP_HEIGHT/2.0f)));
@@ -119,7 +119,7 @@ public class DungeonGenerator : MonoSingleton <DungeonGenerator> {
 		// Reset tilemap
 		for (int i = 0; i < MAP_HEIGHT; i++) 
 			for (int j = 0; j < MAP_WIDTH; j++) 
-				tiles[i,j] = new Tile(Tile.TILE_EMPTY);
+				tiles[i,j] = new Tile(Tile.TILE_EMPTY, 0);
 		
 		// Reset QuadTree
 		quadTree = new QuadTree(new AABB(new XY(MAP_WIDTH/2.0f,MAP_HEIGHT/2.0f),new XY(MAP_WIDTH/2.0f, MAP_HEIGHT/2.0f)));
@@ -286,9 +286,18 @@ public class DungeonGenerator : MonoSingleton <DungeonGenerator> {
 					int id = tiles[row,col].id;
 					if (id == Tile.TILE_ROOM) //Pole w pomieszczeniu
 					{
-						GameObject floor = GameObject.Instantiate(prefabFloor01,new Vector3(col+0.5f,0.0f,row + 0.5f),Quaternion.identity) as GameObject;
+                        var selectedTile = Random.Range(0, 100);
+                        if(selectedTile>80)
+                        {
+                            selectedTile = Random.Range(0, prefabPola.Length);
+                        }
+                        else
+                        {
+                            selectedTile = 0;
+                        }
+						GameObject floor = GameObject.Instantiate(prefabPola[selectedTile],new Vector3(col+0.5f,0.0f,row + 0.5f),Quaternion.identity) as GameObject;
 						floor.transform.parent = container.transform;
-                        floor.GetComponent<Renderer>().material = corridorTexture;
+                        floor.GetComponent<Renderer>().material = roomTexture[tiles[row,col].texture];
 					}
                     else if (id == Tile.TILE_CORRIDOR) //pole w korytarzu
                     {
@@ -350,17 +359,19 @@ public class DungeonGenerator : MonoSingleton <DungeonGenerator> {
 		if (row_bottom < 0) return;
 		if (col_right > MAP_WIDTH-1) return;
 		if (col_left < 0) return;
-		
-		// Dig floor
-	    for (int row = row_bottom; row <= row_top; row++) 
+
+        // Dig floor
+        var texNum = Random.Range(0, roomTexture.Length);
+        for (int row = row_bottom; row <= row_top; row++) 
 	        for (int col = col_left; col <= col_right; col++) 
-	            DigRoom (row,col);
+	            DigRoom (row,col, texNum);
 	}
 	
-	public void DigRoom(int row, int col)
+	public void DigRoom(int row, int col, int texNum)
 	{
         //todo dodać losowanie typu pola i tekstury
         tiles[row,col].id = Tile.TILE_ROOM;
+        tiles[row, col].texture = texNum;
 	}
 	
 	public void DigCorridor(int row, int col)

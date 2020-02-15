@@ -44,4 +44,8 @@ public class GeneratorMenuUIControl : MonoBehaviour
         MAX_DEPTH = (int)maxDepth.value;
         SceneManager.LoadScene(dungeonName);
     }
+    public void Awake()
+    {
+        seedInput.text = (System.DateTime.Now.Millisecond * 1000 + System.DateTime.Now.Minute * 100).ToString();
+    }
 }

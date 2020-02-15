@@ -285,7 +285,10 @@ MonoBehaviour:
   prefabWall01: {fileID: 100006, guid: 14eb9fb520128a042b05e06aed498b33, type: 3}
   prefabFloor01: {fileID: 100000, guid: 55e888c94d014764da055bde7380908f, type: 3}
   prefabPola: []
-  roomTexture: []
+  roomTexture:
+  - {fileID: 2100000, guid: c2d06aa3d85dbb84bbff74d846513e6a, type: 2}
+  - {fileID: 2100000, guid: 8c5b1befab3f823419802edac31e39a6, type: 2}
+  - {fileID: 2100000, guid: 2bb1e06b7bd822d4f9a6a07e3ee30086, type: 2}
   corridorTexture: {fileID: 2100000, guid: 2bb1e06b7bd822d4f9a6a07e3ee30086, type: 2}
   meshCombiner: {fileID: 100000, guid: 84e14c2985a78bd498bab16b98be7f00, type: 3}
   player: {fileID: 0}
